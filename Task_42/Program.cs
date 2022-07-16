@@ -1,11 +1,15 @@
 ﻿// Напишите программу, которая будет преобразовывать десятичное число в двоичное.
 Console.Write("ВВедите число ");
-int a = Convert.ToInt32(Console.ReadLine());
-string b = "";
+int number = Convert.ToInt32(Console.ReadLine());
 
-while (a>0)
+ToBin(number);
+
+void ToBin(int number)
 {
-    b = a%2+b;
-    a/=2;
+    if (number == 0)
+    {
+        return;
+    }
+    ToBin(number/2);
+    Console.Write(number%2);  
 }
-Console.WriteLine(b);
